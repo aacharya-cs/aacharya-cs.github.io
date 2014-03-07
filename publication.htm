@@ -1,0 +1,136 @@
+<html>
+   <head>
+       <title>Publication</title>
+       <link REL="stylesheet" TYPE="text/css" href="autostyle.css">
+       <script src="http://simile-widgets.org/exhibit/api/exhibit-api.js" type="text/javascript"></script>
+       <link rel="exhibit/data"
+          href="publications.bib" 
+          type="application/x-bibtex" />
+       
+       <style>
+           body {
+               font-family: sans-serif;
+           }
+           div.publication { margin-bottom: 1em; padding: 1em; border: 1px solid #ccc; }
+           div.author {}
+           div.title { font-weight: bold; font-size: 120%; }
+       </style>
+   </head>
+   <body onload="Exhibit.create(null, 'Publication');">
+
+<div id="container">
+<div id="top">
+  <a href="index.html">Home</a>-><a href="publication.htm">Publication</a>
+</div>
+<div id="leftnav">
+<p>
+  <A HREF="research.htm">Research</A><br>
+  <A HREF="publication.htm">Publication</A><br>
+  <A HREF="tutorial.htm">Tutorial</A><br>
+  <A HREF="code.htm">Code</A><br>
+  <A HREF="link.htm">Link</A><br>
+  <A HREF="personal.htm">Personal</A><br>
+</p>
+</div>
+
+
+
+    <div id="content">
+
+       <h3>Papers</h3>
+
+      This table is automatically generated. The generating BibTeX file
+      is <a href="publications.bib">here</a>. 
+
+      <table width="100%">
+	<tr valign="top">
+	  <td>
+            <div ex:role="collection" ex:itemTypes="Publication"></div>
+	    <div ex:role="lens" ex:itemTypes="Publication" class="publication" style="display: none">
+
+            <!-- <div ex:role="exhibit-lens" ex:itemTypes="Publication" class="publication" style="display: none">
+		 <span ex:control="copy-button" style="float: right"></span> -->
+
+	      <span ex:if-exists=".author">
+		<span class="content" ex:content=".author"></span>,
+	      </span>
+	      <i><span class="pubtlTitle" ex:content=".label"></span></i>,
+	      <span ex:if-exists=".booktitle">
+		<span ex:content=".booktitle" class="booktitle"></span>,
+	      </span>
+	      <span ex:if-exists=".journal">
+		<span ex:content=".journal" class="journal"></span>,
+		<span ex:if-exists=".volume">
+		  <span ex:content=".volume" class="volume"></span>
+		  <span ex:if-exists=".number">
+		    (<span ex:content=".number"></span>)
+		  </span>,
+		</span>
+	      </span>
+	      <span ex:if-exists=".organization">
+		<span ex:content=".organization" class="journal"></span>,
+	      </span>
+	      <span ex:if-exists=".institution">
+		<span ex:content=".institution" class="institution"></span>, 
+		<span ex:content=".kind"></span>
+		<span ex:if-exists=".number"> 
+		  (<span ex:content=".number"></span>)
+		</span>, 
+	      </span>
+	      <span ex:if-exists=".editor">
+		<span ex:content=".editor"></span> (Eds.),
+	      </span>
+	      <span ex:if-exists=".series">
+		<span ex:content=".series"></span>,
+	      </span>
+	      <span ex:if-exists=".publisher">
+		<span ex:content=".publisher"></span>,
+	      </span>
+	      <span ex:if-exists=".address">
+		<span ex:content=".address"></span>
+	      </span>
+	      <span ex:if-exists=".pages">
+		pp.<span ex:content=".pages"></span>,
+	      </span>
+	      <span ex:content=".year"></span>.
+	      <span ex:if-exists=".isbn">
+		ISBN:&nbsp;<a ex:href-subcontent="http://www.worldcatlibraries.org/isbn/{{.isbn}}">
+		  <span ex:content=".isbn"></span></a>.
+	      </span> 
+	      <span ex:if-exists=".url">
+		<a class="content"ex:href-content=".url">(link)</a>
+	      </span>
+	      <span ex:if-exists=".pdf">
+		<a ex:href-content=".pdf">PDF</a>
+	      </span>
+	      <span ex:if-exists=".postscript">
+		<a ex:href-content=".postscript">PS.GZ</a>
+	      </span>
+            </div>
+            <div ex:role="exhibit-lens" ex:itemTypes="Author" class="author" style="display: none">
+              <span ex:control="copy-button" style="float: right"></span>
+              <div class="title"><span ex:content=".label"></span></div>
+              
+              <ol class="publications" ex:content="!author">
+		<li ex:content="value"></li>
+              </ol>
+            </div>
+
+            <div ex:role="view"
+		 ex:showAll="true"
+                 ex:grouped="true"
+                 ex:orders=".year"
+                 ex:directions="descending"
+		 ex:possibleOrders=".pub-type, .author, .year, .label"></div>
+	  </td>
+	  <td width="30%">
+            <div ex:role="facet" ex:expression=".pub-type" ex:sortMode="count" ex:scroll="false" ex:facetLabel="filter by type"></div>
+            <div ex:role="facet" ex:expression=".year" ex:scroll="false" ex:showMissing="false" ex:facetLabel="filter by year"></div>
+            <div ex:role="facet" ex:expression=".author" ex:scroll="false" ex:facetLabel="filter by author"></div>
+	  </td>
+	</tr>
+      </table>
+  </div>
+  </div>
+   </body>
+   </html>

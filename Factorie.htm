@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Ayan Acharya</title>
+<link href="style2.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><div style="text-transform: capitalize; "><a href="#">ayan acharya</a></div></h1><br>
+		</div>
+		<div id="search">
+			<form method="get" action="">
+				<fieldset>
+				<input type="text" name="s" id="search-text" size="15" />
+				<input type="submit" id="search-submit" value="Search" />
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="http://www.ideal.ece.utexas.edu/~ayan/index.html">Home</a></li>
+			<li><a href="http://www.ideal.ece.utexas.edu/~ayan/research.htm">Research</a></li>
+			<li><a href="http://www.ideal.ece.utexas.edu/~ayan/publications.htm">Publications</a></li>
+			<li><a href="http://www.ideal.ece.utexas.edu/~ayan/resume.htm">Resume</a></li>
+			<li><a href="http://www.ideal.ece.utexas.edu/~ayan/links.htm">Links</a></li>
+                        <li><a href="http://www.ideal.ece.utexas.edu/~ayan/personal.htm">Personal</a></li> 
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+				<h2 class="title"><a href="#"><center> Guideline for Installation and Usage of FACTORIE</center></a></h2>
+				<div class="entry">
+					<br><br>
+Special thanks to <a href="http://tommy.chheng.com/">Tommy Chheng</a> for sharing his commands and codes for running FACTORIE from command line. Thanks to <a href="http://www.abhimanukumar.com/">Abhimanu Kumar</a> for tolerating my Linux-ignorance and helping me generously.<br><br>
+
+To run <a href="http://code.google.com/p/factorie/">FACTORIE</a> from a terminal, first you need to install three packages:
+
+<ul>
+<li> Apache maven2: Command- sudo apt-get install maven2</li> 
+<li> mercurial: Command- sudo apt-get install mercurial</li> 
+<li> git: Command- sudo apt-get install git</li> 
+</ul>
+
+Now, you can either explicitly download the latest FACTORIE package (0.9.0) from the <a href="http://code.google.com/p/factorie/source/browse/?r=factorie-0.9.0">repository</a> to run it with eclipse or you can use the following commands (I used these commands only) to run FACTROIE from the terminal:<br><br>
+
+<ul>
+<li> Clone the source code: hg clone https://factorie.googlecode.com/hg/ factorie</li> 
+<li> Compile the code into a jar:
+     <ul>
+     <li>cd factorie</li>
+     <li>mvn install</li>
+     </ul>     
+     This will create a factorie jar file in target/factorie*.jar and install it into your local maven repository. 
+<li> Download the example directly in your local machine or server from <a href="examplebytc.tar.gz">here</a> and save it anywhere. In the example, you’ll notice a pom.xml. Inside the file, you’ll see:<br>
+<div id="_mcePaste">&lt;dependency&gt;</div>
+<div id="_mcePaste">&lt;groupId&gt;cc.factorie&lt;/groupId&gt;</div>
+<div id="_mcePaste">&lt;artifactId&gt;factorie&lt;/artifactId&gt;</div>
+<div id="_mcePaste">&lt;version&gt;0.9.1-SNAPSHOT&lt;/version&gt;</div>
+<div id="_mcePaste">&lt;/dependency&gt;</div>
+You may have to change the version to match the updated factorie jar version (FACTORIE is going to release version 1.0.0 soon).
+This sample project has two files:<br>
+<ul>
+<li>src/main/scala/factorie/LDAExample.scala</li>
+<li>src/main/scala/factorie/LDAExampleTest.scala</li> 
+</ul>
+<li>Go to the directory where you saved the example project and compile and run it using: mvn test</li> 
+
+You should see an output of listed topics:<br />
+<code>.....Iteration 20<br />
+alpha = 0.7897046248435047 1.083615490115922 1.3493645028398928 0.8200016581775706 1.1115652808961307 1.7646165019929618 2.0397615066201604 1.8106654639049065 1.75947360834168 1.2876416992683335<br />
+Topic 0  china science achieved contacts powerful power urbana find faster projects<br />
+Topic 1  computing performance list chinese gropp problems smith years today tennessee<br />
+Topic 2  service stephen full messages members data twitter contacts services plenty<br />
+Topic 3  world erica announcement computer floating components center states couldn fastest<br />
+Topic 4  jaguar point ogg year high benchmark speed supercomputers community time<br />
+Topic 5  itunes features print mac kessler suggests back challenge tomorrow tuesday<br />
+Topic 6  mail facebook google shankland people address big reach ability aol<br />
+Topic 7  system news university tianhe top topher national called supercomputing font<br />
+
+Topic 8  apple share supercomputer systems operations machine company based released place<br />
+Topic 9  gmail cnet software digg supercomputing social comments technology expected linpack</code></p>
+<p>And you are done with implementing LDA in only 2 mins.</p>
+</ul><br>
+Now, you can go to FACTORIE <a href="http://code.google.com/p/factorie/">home page</a> and explore other technicalities. I will update more about implementation as I gather more experience. Feedbacks and questions are always welcome.<br><br>
+
+<p>Tools you need to learn for handling FACTORIE:
+<ul>
+<li><a href="http://programming-scala.labs.oreilly.com/index.html">Scala</a></li>
+<li><a href="http://maven.apache.org/guides/getting-started/index.html">Maven</a></li>
+</ul>
+You can separately install Scala using the following commands (latest version of FACTORIE uses Scala 2.8.1):
+<ul>
+<li> wget http://www.scala-lang.org/downloads/distrib/files/scala-2.8.1.final.tgz</li>
+<li> tar -zxvf scala-2.8.1.final.tgz</li>
+<li> sudo mv scala-2.8.1.final /usr/share/scala</li>
+<li> sudo ln -s /usr/share/scala/bin/scala /usr/bin/scala</li>
+<li> sudo ln -s /usr/share/scala/bin/scalac /usr/bin/scalac</li>
+<li> sudo rm -rf /usr/share/scala /usr/bin/scala /usr/bin/scalac (for uninstallation)</li>
+</ul>
+</p>
+
+<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+</body>
+</html>
+
