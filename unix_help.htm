@@ -61,6 +61,77 @@ Released   : 20090723
 <li> ctrl+A+D: Leaves the screen session </li>
 </ul>
 
+:: Setting Up New Computer ::
+
+installing openssh server for remote access:
+sudo apt-get install openssh-server
+
+installing java in ubuntu:
+sudo apt-get update
+java -version
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
+
+install oracle java 7 in ubuntu: 
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+
+install git:
+sudo apt-get update
+sudo apt-get install git
+install python:
+sudo apt-get install build-essential
+sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+wget http://python.org/ftp/python/2.7.8/Python-2.7.8.tgz
+tar -xvf Python-2.7.8.tgz
+cd Python-2.7.8
+./configure
+make
+sudo make install
+pip and easy-install and other python packages:
+sudo apt-get install python-pip python-dev build-essential 
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv 
+sudo pip install numpy scipy pandas patsy statsmodels pyyaml nltk pymongo
+installing R:
+sudo apt-get update
+sudo apt-get install r-base
+sudo apt-get install r-base-dev
+installing GSL:
+wget http://mirror.sdunix.com/gnu/gsl/gsl-latest.tar.gz
+tar -xvf gsl-latest.tar.gz
+cd gsl-1.16
+./configure
+make 
+make clean
+make check > log 2>&1
+sudo make install
+installing Boost:
+sudo apt-get install libboost-all-dev
+installing latex:
+sudo apt-get update
+sudo apt-get install texlive-full
+
+
+installing GSL:
+wget http://mirror.sdunix.com/gnu/gsl/gsl-latest.tar.gz
+tar -xvf gsl-latest.tar.gz
+cd gsl-1.16
+./configure --disable-shared
+sudo make 
+make check
+sudo make install
+
+installing subversion:
+sudo apt-get install subversion
+
+installing dropbox:
+dropbox start -i
+
+installing opencv:
+sudo apt-get install libopencv-dev python-opencv
+
 <li><a href="http://www.garron.me/linux/scp-linux-mac-command-windows-copy-files-over-ssh.html"> scp guides </a></li>
 <li><a href="http://linux.about.com/od/commands/l/blcmdl1_sftp.htm"> sftp guides </a></li>
 
